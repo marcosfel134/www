@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../_fonts/Roboto-Medium.ttf');
+}
+
+:root {
+    --cor-primaria: #253342;
+    --cor-secundaria: #5e9188;
+
+    --cor-preto: #232226;
+    --cor-branco: #ffffff;
+    --cor-cinza: #ededf2;
+}
+
+* {
+    /* border: 1px solid red; */
+}
+
+body {
+    background-color: var(--cor-cinza);
+}
+
+/* header */
+/* header */
+/* header */
+
+header {
+    background-color: var(--cor-branco);
+}
+
+header h1 {
+    font-family: 'roboto';
+}
+
+header button, header li {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    border-radius: 10px;
+    border: none;
+    transition: 0.3s;
+    width: 150px;
+}
+
+.dropdown-menu {
+    width: 100px;
+}
+
+.dropdown-menu li{
+    background-color: var(--cor-branco);
+    width: 85%;
+    font-size: 16px;
+}
+
+.dropdown-menu a {
+    width: 100%;
+    padding: 10px;
+}
+
+header button:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+header li {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.nav-botao-desabilitado {
+    background-color: gray;
+}
+
+header i {
+    color: var(--cor-preto);
+    font-size: 25px;
+}
+
+.nav-link {
+    color: var(--cor-branco);
+    font-family: 'roboto';
+}
+
+.nav-link:hover {
+    color: var(--cor-branco);
+}
+
+
+
+/* main */
+/* main */
+/* main */
+
+.btn-finalizar {
+    color: var(--cor-branco);
+    background-color: var(--cor-primaria);
+    font-family: 'roboto';
+    border: none;
+    border-radius: 10px;
+    padding: 8px;
+    height: 45px;
+    transition: 0.3s;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.btn-finalizar:hover {
+    color: var(--cor-preto);
+    background-color: var(--cor-branco);
+    border: 1px solid var(--cor-preto);
+    transition: 0.3s;
+}
+
+.inputsenha {
+    margin: 0 auto;
+    width: 50%;
+}
+
+@media (max-width: 768px) { 
+    header li {
+        margin: 10px;
+        text-align: center;
+    }
+    header li, header button {
+        width: 100%;
+    }
+    .inputsenha {
+        width: 100%;
+    }
+    .btn-finalizar {
+        width: 100%;
+    }
+}
+
+/* footer */
+/* footer */
+/* footer */

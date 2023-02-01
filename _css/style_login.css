@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'roboto';
+    src: url('../_fonts/Roboto-Medium.ttf');
+}
+
+:root {
+    --cor-primaria: #253342;
+    --cor-secundaria: #5e9188;
+
+    --cor-preto: #232226;
+    --cor-branco: #ffffff;
+    --cor-cinza: #ededf2;
+}
+
+* {
+    /* border: 1px solid red; */
+}
+
+body {
+    background-color: var(--cor-cinza);
+}
+
+.cardlogin {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    background-color: var(--cor-branco);
+    height: 600px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.cardlogin figure {
+    width: 100%;
+    height: 100%;
+}
+
+.cardlogin img {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-submit {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: var(--cor-branco);
+    color: var(--cor-preto);
+    border: 1px solid var(--cor-preto);
+    transition: 0.3s;
+}
+
+/* header */
+/* header */
+/* header */
+
+/* main */
+/* main */
+/* main */
+
+/* footer */
+/* footer */
+/* footer */

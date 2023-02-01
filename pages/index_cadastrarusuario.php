@@ -2,9 +2,8 @@
 include('../protect.php');
 include('../conexao.php');
 
-if ($_SESSION['adm'] == 1){
-    
-}else{
+if ($_SESSION['adm'] == 1) {
+} else {
     echo "<script>
     alert('ERRO! Sem permissão para acessar.');
     window.location='index_home.php';
@@ -28,73 +27,15 @@ if ($_SESSION['adm'] == 1){
 </head>
 
 <body>
-    <header class="px-5">
-        <nav class="container navbar navbar-expand-lg">
-            <a class="navbar-brand" href="index_home">
-                <h1 class="display-6 text-dark d-inline-block">
-                    GerenTI |
-                </h1>
-            </a>
-            <span class="d-none d-lg-block">Logado como: <?php echo $_SESSION['email'];?></span> 
+    <?php
+    include("../pages_components/header.php");
+    ?>
 
-            <nav class="">
-                <div class="">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#togglemenu" aria-controls="togglemenu" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="bi bi-list"></i>
-                    </button>
-                </div>
-            </nav>
+    <main class="pb-5 px-5 pt-2">
+        <?php
+        include("../pages_components/menu_funcoes.php");
+        ?>
 
-            <div class="menu collapse navbar-collapse" id="togglemenu">
-                <div class="py-4 py-lg-0" style="margin: 0px 0px 0px auto;">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <button class="nav-botao">
-                                <a class="nav-link" href="index_home.php">
-                                    Início
-                                </a>
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <div class="dropdown">
-                                <button class="nav-botao">
-                                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Configurações
-                                    </a>
-
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="index_alterarsenha.php">Alterar senha</a></li>
-
-                                        <?php
-                                                if ($_SESSION['adm'] == 1){
-                                                    print "<li><a class='dropdown-item' href='index_funcoesadm.php'>Fun. ADM</a></li>";
-                                                }   
-                                        ?>
-                                    </ul>
-                                </button>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-botao">
-                                <a class="nav-link" href="index_ajuda.php">
-                                    Ajuda
-                                </a>
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="nav-botao-sair">
-                                <a class="nav-link" href="../logout.php">
-                                    Sair
-                                </a>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main class="p-5">
         <section class="container">
             <div class="">
                 <h1 class="display-4 text-center">
@@ -119,6 +60,25 @@ if ($_SESSION['adm'] == 1){
                             <label for="cadastrorepitasenha">Repita a senha:</label> <span class="text-danger">*</span>
                             <input name="cadastrorepitasenha" id="cadastrorepitasenha" class="form-control inputsenha" type="password" required>
                         </div>
+                        <div class="my-2 text-center col-12">
+                            <label for="tipodechamado">Tipo de chamado:</label> <span class="text-danger">*</span>
+                            <select required class="d-block form-select inputsenha" name="tipodechamado" id="tipodechamado">
+                                <option selected></option>
+                                <option value="Aquisição de equipamento">Aquisição de equipamento</option>
+                                <option value="Criação de email">Criação de email</option>
+                                <option value="Criação de usuário">Criação de usuário</option>
+                                <option value="Elétrica">Elétrica</option>
+                                <option value="Infra de redes">Infra de redes</option>
+                                <option value="Manutenção em hardware">Manutenção em hardware</option>
+                                <option value="Manutenção de software">Manutenção de software</option>
+                                <option value="Manutenção em conexão de internet">Manutenção em conexão de internet</option>
+                                <option value="Manutenção em linha telefônica">Manutenção em linha telefônica</option>
+                                <option value="Manutenção em impressora">Manutenção em impressora</option>
+                                <option value="Suporte ao usuário (remoto ou presencial)">Suporte ao usuário (remoto ou presencial)</option>
+                                <option value="Telefonia">Telefonia</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
                         <div class="my-2 col-12">
                             <input type="submit" value="Finalizar" class="form-control btn-finalizar">
                         </div>
@@ -128,14 +88,9 @@ if ($_SESSION['adm'] == 1){
         </section>
     </main>
 
-    <footer class="p-5 text-center" style="font-size: 10px;">
-        <div>
-            Todos os direitos reservados &copy;
-        </div>
-        <div>
-            Desenvolvido por: <a target="_blank" href="https://www.linkedin.com/in/marcosfel134/">@marcosfel134</a>
-        </div>
-    </footer>
+    <?php
+    include("../pages_components/footer.php");
+    ?>
 
     <script src="../js/bootstrap.bundle.min.js"></script>
 </body>

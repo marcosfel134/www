@@ -1,10 +1,31 @@
 <?php
 include('../protect.php');
 include("../conexaochamado.php");
+
+$aberto = 0;
+$emandamento = 0;
+$concluido = 0;
+$cancelado = 0;
+
+$resultadochamados = "SELECT * FROM chamados";
+$result = $conn->query($resultadochamados);
+while ($row = mysqli_fetch_assoc($result)) {
+    if ($row['situacao'] == "Aberto") {
+        $aberto += 1;
+    } else if ($row['situacao'] == "Em andamento") {
+        $emandamento += 1;
+    } else if ($row['situacao'] == "Concluído") {
+        $concluido += 1;
+    } else if ($row['situacao'] == "Cancelado") {
+        $cancelado += 1;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,111 +33,75 @@ include("../conexaochamado.php");
     <title>gerenTI - Início</title>
     <link rel="stylesheet" href="../_css/datatables_bootstrap.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../_css/style_home1_4_5.css">
+    <link rel="stylesheet" href="../_css/style_home1_4_7.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="../_img/favicon.png">
 </head>
-    <body>
-        <header class="px-5">
-            <nav class="container navbar navbar-expand-lg">
-                <a class="navbar-brand" href="index_home.php">
-                    <h1 class="display-6 text-dark d-inline-block">
-                    GerenTI |
-                    </h1>
-                </a>
-                <span class="d-none d-lg-block">Logado como: <?php echo $_SESSION['email'];?></span> 
 
-                <nav class="">
-                    <div class="">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#togglemenu" aria-controls="togglemenu" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="bi bi-list"></i>
-                        </button>
-                    </div>
-                </nav>
+<body>
+    <?php
+        include("../pages_components/header.php");
+    ?>
 
-                <div class="menu collapse navbar-collapse" id="togglemenu">
-                    <div class="py-4 py-lg-0" style="margin: 0px 0px 0px auto;">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <button class="nav-botao">
-                                    <a class="nav-link" aria-current="page" href="index_home.php">
-                                    Início
-                                    </a>
-                                </button>
-                            </li>
-                            <li class="nav-item">
-                                <div class="dropdown">
-                                    <button class="nav-botao">
-                                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Configurações
-                                        </a>
+    <main class="pb-5 px-5 pt-2">
+    <?php
+        include("../pages_components/menu_funcoes.php");
+    ?>
 
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="index_alterarsenha.php">Alterar senha</a></li>
-                                        </ul>
-                                    </button>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-botao">
-                                    <a class="nav-link" href="index_ajuda.php">
-                                    Ajuda
-                                    </a>
-                                </button>
-                            </li>
-                            <li class="nav-item">
-                                <button class="nav-botao-sair">
-                                    <a class="nav-link" href="../logout.php">
-                                    Sair
-                                    </a>
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-
-        <main class="pb-5 px-5 pt-2">
-            <section class="container py-2">
-                <div class="row">
-                    <div class="col-4 col-md-2 col-lg-1 btn-funcoes p-0">
-                        <a href="index_chamados.php">
-                            <button>
-                                <i class="bi bi-list-check"></i>
-                                <div>
-                                    Chamados
-                                </div>
-                            </button>
-                        </a>
-                    </div>
-                    <?php
-                        if ($_SESSION['adm'] == 1){
-                            print "<div class='col-4 col-md-2 col-lg-1 btn-funcoes p-0'>
-                            <a href='index_funcoesadm.php'>
-                                <button>
-                                    <i class='bi bi-person-gear'></i>
-                                    <div>
-                                        Fun. ADM
-                                    </div>
-                                </button>
-                            </a>
-                        </div>";
-                        }   
-                    ?>
-                </div>
+        <section class="container">
+            <h1 class="display-4 text-center">
+                Estatísticas
                 <hr>
-            </section>                            
+            </h1>
 
-        <footer class="p-5 text-center" style="font-size: 10px;">
-            <div>
-                Todos os direitos reservados &copy;
-            </div>
-            <div>
-                Desenvolvido por: <a target="_blank" href="https://www.linkedin.com/in/marcosfel134/">@marcosfel134</a>
-            </div>
-        </footer>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-md-5 m-2" style="border-radius: 10px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px; padding: 0px;">
+                    <h6 class=""></h6>
+                    <html>
 
-    <script src="../js/bootstrap.bundle.min.js"></script>
-    </body>
+                    <head>
+                        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                        <script type="text/javascript">
+                            google.charts.load("current", {
+                                packages: ["corechart"]
+                            });
+                            google.charts.setOnLoadCallback(drawChart);
+
+                            function drawChart() {
+                                var data = google.visualization.arrayToDataTable([
+                                    ['Task', 'Hours per Day'],
+                                    ['Aberto', <?= $aberto ?>],
+                                    ['Em andamento', <?= $emandamento ?>],
+                                    ['Concluído', <?= $concluido ?>],
+                                    ['Cancelado', <?= $cancelado ?>]
+                                ]);
+
+                                var options = {
+                                    title: 'Situação de chamados:',
+                                    pieHole: 0,
+                                    colors: ['#253342', '#5e9188', '#000000', '#778899']
+                                };
+
+                                var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+                                chart.draw(data, options);
+                            }
+                        </script>
+                    </head>
+
+                    <body>
+                        <div id="donutchart" style="width: 100%; height: 300px;"></div>
+                    </body>
+
+                    </html>
+                </div>
+            </div>
+        </section>
+
+        <?php
+            include("../pages_components/footer.php");
+        ?>
+
+        <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+
 </html>

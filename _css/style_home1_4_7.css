@@ -126,28 +126,6 @@ header i {
 /* main */
 /* main */
 
-.btn-funcoes a {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    padding: 0px;
-
-}
-
-.btn-funcoes i {
-    font-size: 25px;
-}
-
-.btn-funcoes button{
-    border: none;
-    background-color: var(--cor-cinza);
-    border-radius: 10px;
-    padding: 10px;
-    color: var(--cor-primaria);
-    font-size: 10px;
-    border: 1px solid var(--cor-preto);
-}
-
 .btn-novo-chamado {
     width: 150px;
     margin: 0 0 0 auto;

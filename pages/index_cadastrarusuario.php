@@ -61,22 +61,27 @@ if ($_SESSION['adm'] == 1) {
                             <input name="cadastrorepitasenha" id="cadastrorepitasenha" class="form-control inputsenha" type="password" required>
                         </div>
                         <div class="my-2 text-center col-12">
-                            <label for="tipodechamado">Tipo de chamado:</label> <span class="text-danger">*</span>
-                            <select required class="d-block form-select inputsenha" name="tipodechamado" id="tipodechamado">
+                            <label for="cadastrosetor">Setor:</label> <span class="text-danger">*</span>
+                            <select required class="d-block form-select inputsenha" name="cadastrosetor" id="cadastrosetor">
                                 <option selected></option>
-                                <option value="Aquisição de equipamento">Aquisição de equipamento</option>
-                                <option value="Criação de email">Criação de email</option>
-                                <option value="Criação de usuário">Criação de usuário</option>
-                                <option value="Elétrica">Elétrica</option>
-                                <option value="Infra de redes">Infra de redes</option>
-                                <option value="Manutenção em hardware">Manutenção em hardware</option>
-                                <option value="Manutenção de software">Manutenção de software</option>
-                                <option value="Manutenção em conexão de internet">Manutenção em conexão de internet</option>
-                                <option value="Manutenção em linha telefônica">Manutenção em linha telefônica</option>
-                                <option value="Manutenção em impressora">Manutenção em impressora</option>
-                                <option value="Suporte ao usuário (remoto ou presencial)">Suporte ao usuário (remoto ou presencial)</option>
-                                <option value="Telefonia">Telefonia</option>
-                                <option value="Outros">Outros</option>
+                                <option value="Gabinete do Prefeito">Gabinete do Prefeito</option>
+                                <option value="Controladoria Geral">Controladoria Geral</option>
+                                <option value="Procuradoria-Geral">Procuradoria-Geral</option>
+                                <option value="Secretaria Municipal de Planejamento e Governo">Secretaria Municipal de Planejamento e Governo</option>
+                                <option value="Secretaria Municipal de Defesa do Cidadão">Secretaria Municipal de Defesa do Cidadão</option>
+                                <option value="Secretaria Municipal de Administração">Secretaria Municipal de Administração</option>
+                                <option value="Secretaria Municipal de Fazenda">Secretaria Municipal de Fazenda</option>
+                                <option value="Secretaria Municipal de Saúde">Secretaria Municipal de Saúde</option>
+                                <option value="Secretaria Municipal de Educação">Secretaria Municipal de Educação</option>
+                                <option value="Secretaria Municipal de Esporte e Lazer">Secretaria Municipal de Esporte e Lazer</option>
+                                <option value="Secretaria Municipal de Cultura<">Secretaria Municipal de Cultura</option>
+                                <option value="Secretaria Municipal de Turismo">Secretaria Municipal de Turismo</option>
+                                <option value="Secretaria Municipal de Indústria e Comércio">Secretaria Municipal de Indústria e Comércio</option>
+                                <option value="Secretaria Municipal de Segurança Pública e Trânsito">Secretaria Municipal de Segurança Pública e Trânsito</option>
+                                <option value="Secretaria Municipal de Obras e Urbanismo">Secretaria Municipal de Obras e Urbanismo</option>
+                                <option value="Secretaria Municipal de Meio Ambiente e Serviços Públicos">Secretaria Municipal de Meio Ambiente e Serviços Públicos</option>
+                                <option value="Secretaria Municipal de Assistência Social e da Mulher">Secretaria Municipal de Assistência Social e da Mulher</option>
+                                <option value="Outro">Outro</option>
                             </select>
                         </div>
                         <div class="my-2 col-12">

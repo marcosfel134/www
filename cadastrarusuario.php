@@ -4,6 +4,7 @@ include ("conexao.php");
     $cadastrousuario = $_POST["cadastrousuario"];
     $cadastrosenha = $_POST["cadastrosenha"];
     $cadastrorepitasenha = $_POST["cadastrorepitasenha"];
+    $cadastrosetor = $_POST["cadastrosetor"];
 
     $verificacao = "SELECT * FROM usuarios WHERE email = '$cadastrousuario'";
     $result = $mysqli->query($verificacao);
@@ -16,8 +17,8 @@ include ("conexao.php");
         </script>";
     }else{
         if ($cadastrosenha == $cadastrorepitasenha){
-            $sql = "INSERT INTO usuarios (email, senha) 
-            VALUES ('{$cadastrousuario}', '{$cadastrosenha}')";
+            $sql = "INSERT INTO usuarios (email, senha, setor) 
+            VALUES ('{$cadastrousuario}', '{$cadastrosenha}', '{$cadastrosetor}')";
     
             $res = $mysqli->query($sql);
     

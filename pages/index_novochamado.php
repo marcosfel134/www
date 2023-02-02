@@ -2,6 +2,7 @@
 
 include('../protect.php');
 include('../conexao.php');
+include('../conexaochamado.php');
 
 ?>
 
@@ -120,11 +121,22 @@ include('../conexao.php');
 
                             </select>
                         </div>
+                        
+                        <?php
+                            if ($_SESSION['adm'] == 1){
+                                print '';
+                            }
+                        ?>
 
-                        <div class="my-2 col-12 col-md-6">
-                            <label for="setor">Setor:</label>
-                            <input name="setor" id="setor" class="form-control" type="text">
-                        </div>
+                        <?php
+                            if ($_SESSION['adm'] == 0){
+                                echo '<div class="my-2 col-12 col-md-6">
+                                        <label for="setor">Setor:</label>
+                                        <input name="setor" id="setor" class="form-control" type="text" readonly value"'.$_SESSION['email'].'">
+                                        </div>';
+                            }
+                        ?>
+                        
 
                         <div class="my-2 col-12">
                             <label for="descricao">Descrição:</label> <span class="text-danger">*</span>

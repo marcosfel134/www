@@ -122,21 +122,40 @@ include('../conexaochamado.php');
                             </select>
                         </div>
                         
-                        <?php
-                            if ($_SESSION['adm'] == 1){
-                                print '';
+                        <?php 
+                            if ($_SESSION['adm'] != 1){
+                                print '<div class="my-2 col-12 col-md-6">
+                                <label for="setor">Setor:</label> <span class="text-danger">*</span> <i>(Não editável)</i>
+                                <input name="setor" id="setor" class="form-control" type="text" readonly value="'.$_SESSION ["setor"].'">
+                            </div>';
+                            }else if ($_SESSION['adm'] == 1){
+                                print '<div class="my-2 col-12 col-md-6">
+                                <label for="setor">Setor:</label> <span class="text-danger">*</span>
+                                <select required class="form-select" name="setor" id="setor">
+                                    <option selected></option>
+                                    <option value="Gabinete do Prefeito">Gabinete do Prefeito</option>
+                                    <option value="Controladoria Geral">Controladoria Geral</option>
+                                    <option value="Procuradoria-Geral">Procuradoria-Geral</option>
+                                    <option value="Secretaria Municipal de Planejamento e Governo">Secretaria Municipal de Planejamento e Governo</option>
+                                    <option value="Secretaria Municipal de Defesa do Cidadão">Secretaria Municipal de Defesa do Cidadão</option>
+                                    <option value="Secretaria Municipal de Administração">Secretaria Municipal de Administração</option>
+                                    <option value="Secretaria Municipal de Fazenda">Secretaria Municipal de Fazenda</option>
+                                    <option value="Secretaria Municipal de Saúde">Secretaria Municipal de Saúde</option>
+                                    <option value="Secretaria Municipal de Educação">Secretaria Municipal de Educação</option>
+                                    <option value="Secretaria Municipal de Esporte e Lazer">Secretaria Municipal de Esporte e Lazer</option>
+                                    <option value="Secretaria Municipal de Cultura">Secretaria Municipal de Cultura</option>
+                                    <option value="Secretaria Municipal de Turismo">Secretaria Municipal de Turismo</option>
+                                    <option value="Secretaria Municipal de Indústria e Comércio">Secretaria Municipal de Indústria e Comércio</option>
+                                    <option value="Secretaria Municipal de Segurança Pública e Trânsito">Secretaria Municipal de Segurança Pública e Trânsito</option>
+                                    <option value="Secretaria Municipal de Obras e Urbanismo">Secretaria Municipal de Obras e Urbanismo</option>
+                                    <option value="Secretaria Municipal de Meio Ambiente e Serviços Públicos">Secretaria Municipal de Meio Ambiente e Serviços Públicos</option>
+                                    <option value="Secretaria Municipal de Assistência Social e da Mulher">Secretaria Municipal de Assistência Social e da Mulher</option>
+                                    <option value="Outro">Outro</option>
+                                </select>
+                                </div>
+                                ';
                             }
                         ?>
-
-                        <?php
-                            if ($_SESSION['adm'] == 0){
-                                echo '<div class="my-2 col-12 col-md-6">
-                                        <label for="setor">Setor:</label>
-                                        <input name="setor" id="setor" class="form-control" type="text" readonly value"'.$_SESSION['email'].'">
-                                        </div>';
-                            }
-                        ?>
-                        
 
                         <div class="my-2 col-12">
                             <label for="descricao">Descrição:</label> <span class="text-danger">*</span>
@@ -174,7 +193,7 @@ include('../conexaochamado.php');
     </main>
 
     <?php
-       include("../pages_components/footer.php");
+    include("../pages_components/footer.php");
     ?>
 
     <script src="../js/bootstrap.bundle.min.js"></script>

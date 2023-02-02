@@ -20,6 +20,7 @@ padding: 0px;
     border: 1px solid var(--cor-preto);
     width: 70px;
     height: 70px;
+    margin: 3px;
 }
 </style>
 
@@ -62,11 +63,11 @@ padding: 0px;
                 <?php
                 if ($_SESSION['adm'] == 1) {
                     print "<div class='col-4 col-md-2 col-lg-1 btn-funcoes p-0'>
-                            <a href='index_listausuarios.php'>
+                            <a href='#'>
                                 <button>
                                     <i class='bi bi-people'></i>
-                                    <div>
-                                        List. Usuá.
+                                    <div style='color: red;'>
+                                        X
                                     </div>
                                 </button>
                             </a>

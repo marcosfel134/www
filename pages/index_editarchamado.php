@@ -22,7 +22,7 @@
     <section class="container bg-white p-5">
 
         <?php
-            if ($row->situacao == 'Aberto'){
+            /*if ($row->situacao == 'Aberto'){
                 print '<div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar" style="width: 33%">Aberto</div>
             </div>';
@@ -33,7 +33,7 @@
             }else if ($row->situacao == 'Concluído'){
                 print '<div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
             <div class="progress-bar" style="width: 100%">Concluído</div>
-            </div>';}
+            </div>';}*/
         ?>
         
         <form action="../salvarchamado.php" method="post">
@@ -118,8 +118,8 @@
                     </div>
 
                     <div class="my-2 col-12 col-md-6">
-                        <label for="setor">Setor:</label>
-                        <input value="<?php print $row->setor ?>" name="setor" id="setor" class="form-control" type="text">
+                        <label for="setor">Setor:</label> <span class="text-danger">*</span> <i>(Não editável)</i>
+                        <input value="<?php print $row->setor ?>" name="setor" id="setor" class="form-control" type="text" readonly>
                     </div>
 
                     <div class="my-2 col-12">

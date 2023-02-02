@@ -7,6 +7,25 @@ $emandamento = 0;
 $concluido = 0;
 $cancelado = 0;
 
+$secretaria1 = 0;
+$secretaria2 = 0;
+$secretaria3 = 0;
+$secretaria4 = 0;
+$secretaria5 = 0;
+$secretaria6 = 0;
+$secretaria7 = 0;
+$secretaria8 = 0;
+$secretaria9 = 0;
+$secretaria10 = 0;
+$secretaria11 = 0;
+$secretaria12 = 0;
+$secretaria13 = 0;
+$secretaria14 = 0;
+$secretaria15 = 0;
+$secretaria16 = 0;
+$secretaria17 = 0;
+$secretaria18 = 0;
+
 $resultadochamados = "SELECT * FROM chamados";
 $result = $conn->query($resultadochamados);
 while ($row = mysqli_fetch_assoc($result)) {
@@ -18,6 +37,48 @@ while ($row = mysqli_fetch_assoc($result)) {
         $concluido += 1;
     } else if ($row['situacao'] == "Cancelado") {
         $cancelado += 1;
+    }
+}
+
+$resultadochamados2 = "SELECT * FROM chamados";
+$result2 = $conn->query($resultadochamados2);
+while ($row = mysqli_fetch_assoc($result2)) {
+    if ($row['setor'] == "Gabinete do Prefeito") {
+        $secretaria1 += 1;
+    } else if ($row['setor'] == "Controladoria Geral") {
+        $secretaria2 += 1;
+    } else if ($row['setor'] == "Procuradoria-Geral") {
+        $secretaria3 += 1;
+    } else if ($row['setor'] == "Secretaria Municipal de Planejamento e Governo") {
+        $secretaria4 += 1;
+    } else if ($row['setor'] == "Secretaria Municipal de Defesa do Cidadão") {
+        $secretaria5 += 1;
+    } else if ($row['setor'] == "Secretaria Municipal de Administração") {
+        $secretaria6 += 1;
+    } else if ($row['setor'] == "Secretaria Municipal de Fazenda") {
+        $secretaria7 += 1;
+    } else if ($row['setor'] == "Secretaria Municipal de Saúde") {
+        $secretaria8 += 1;
+    } else if ($row['setor'] == "Secretaria Municipal de Educação") {
+        $secretaria9 += 1;
+    } else if ($row['setor'] == "Secretaria Municipal de Esporte e Lazer") {
+        $secretaria10 += 1;
+    } else if ($row['setor'] == "Secretaria Municipal de Cultura") {
+        $secretaria11 += 1;
+    } else if ($row['setor'] == "Secretaria Municipal de Turismo") {
+        $secretaria12 += 1;
+    } else if ($row['setor'] == "Secretaria Municipal de Indústria e Comércio") {
+        $secretaria13 += 1;
+    } else if ($row['setor'] == "Secretaria Municipal de Segurança Pública e Trânsito") {
+        $secretaria14 += 1;
+    } else if ($row['setor'] == "Secretaria Municipal de Obras e Urbanismo") {
+        $secretaria15 += 1;
+    } else if ($row['setor'] == "Secretaria Municipal de Meio Ambiente e Serviços Públicos") {
+        $secretaria16 += 1;
+    } else if ($row['setor'] == "Secretaria Municipal de Assistência Social e da Mulher") {
+        $secretaria17 += 1;
+    } else if ($row['setor'] == "Outro") {
+        $secretaria18 += 1;
     }
 }
 
@@ -33,72 +94,30 @@ while ($row = mysqli_fetch_assoc($result)) {
     <title>gerenTI - Início</title>
     <link rel="stylesheet" href="../_css/datatables_bootstrap.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../_css/style_home1_4_7.css">
+    <link rel="stylesheet" href="../_css/style_home1_4_8.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="../_img/favicon.png">
 </head>
 
 <body>
     <?php
-        include("../pages_components/header.php");
+    include("../pages_components/header.php");
     ?>
 
     <main class="pb-5 px-5 pt-2">
-    <?php
+        <?php
         include("../pages_components/menu_funcoes.php");
-    ?>
-
-        <section class="container">
-            <h1 class="display-4 text-center">
-                Estatísticas
-                <hr>
-            </h1>
-
-            <div class="row align-items-center justify-content-center">
-                <div class="col-12 col-md-5 m-2" style="border-radius: 10px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 10px 0px; padding: 0px;">
-                    <h6 class=""></h6>
-                    <html>
-
-                    <head>
-                        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-                        <script type="text/javascript">
-                            google.charts.load("current", {
-                                packages: ["corechart"]
-                            });
-                            google.charts.setOnLoadCallback(drawChart);
-
-                            function drawChart() {
-                                var data = google.visualization.arrayToDataTable([
-                                    ['Task', 'Hours per Day'],
-                                    ['Aberto', <?= $aberto ?>],
-                                    ['Em andamento', <?= $emandamento ?>],
-                                    ['Concluído', <?= $concluido ?>],
-                                    ['Cancelado', <?= $cancelado ?>]
-                                ]);
-
-                                var options = {
-                                    title: 'Situação de chamados:',
-                                    pieHole: 0,
-                                    colors: ['#253342', '#5e9188', '#000000', '#778899']
-                                };
-
-                                var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-                                chart.draw(data, options);
-                            }
-                        </script>
-                    </head>
-
-                    <body>
-                        <div id="donutchart" style="width: 100%; height: 300px;"></div>
-                    </body>
-
-                    </html>
-                </div>
-            </div>
-        </section>
+        ?>
 
         <?php
-            include("../pages_components/footer.php");
+        if ($_SESSION['adm'] == 1) {
+            include("../pages_components/estatisticas.php");;
+        }
+        ?>
+
+
+        <?php
+        include("../pages_components/footer.php");
         ?>
 
         <script src="../js/bootstrap.bundle.min.js"></script>

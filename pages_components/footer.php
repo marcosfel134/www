@@ -5,4 +5,7 @@
     <div>
         Desenvolvido por: <a target="_blank" href="https://www.linkedin.com/in/marcosfel134/">@marcosfel134</a>
     </div>
+    <div>
+        Versão: 1.0.1
+    </div>
 </footer>

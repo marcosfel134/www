@@ -25,7 +25,7 @@ include ("conexaoequipamentos.php");
     
         echo "<script>
             alert('Equipamento cadastrado com sucesso.');
-            window.location='pages/index_cadastrarusuario.php';
+            window.location='pages/index_cadastrarequipamento.php';
             </script>";
     }   
 ?>

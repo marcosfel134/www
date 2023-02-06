@@ -22,11 +22,12 @@ if ($_SESSION['adm'] == 1){
         while($row = $res->fetch_object()){
             print "<tr>";
             print "<td>".$row->patrimonio."</td>";
-            print "<td>".$row->dataregistro."</td>";
+            print "<td>".date('d/m/Y', strtotime($row->dataregistro))."</td>";
             print "<td>".$row->descricao."</td>";
             print "<td>".$row->setor."</td>";
             print "<td class='acoes'>
                 <div class='w-100 h-100 m-0'>
+                <button onclick=\"location.href=''; \"class='btn btn-primary btn-acoes d-inline-block'><i class='bi bi-eye'></i></button>
                     <button onclick=\"location.href=''; \"class='btn btn-dark btn-acoes d-inline-block'><i class='bi bi-pencil'></i></button>
                     <button onclick=\"location.href=''; \"class='btn btn-danger btn-acoes d-inline-block'><i class='bi bi-trash'></i></button>
                 </div>  

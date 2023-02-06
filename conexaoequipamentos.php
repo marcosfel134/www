@@ -1,7 +1,7 @@
 <?php
-    define('HOST', 'localhost');
-    define('USER', 'root');
-    define('PASS', '');
-    define('BASE', 'equipamentos');
+    $usuarioequip = 'root';
+    $senhaequip = '';
+    $databaseequip = 'equipamentos';
+    $hostequip = 'localhost';
 
-    $connequip = new mysqli(HOST, USER, PASS, BASE);
+    $connequip = new mysqli($hostequip, $usuarioequip, $senhaequip, $databaseequip);

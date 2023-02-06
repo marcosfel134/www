@@ -19,7 +19,7 @@ if ($_SESSION['adm'] == 1) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gerenTI - Cadastrar novo usuário</title>
+    <title>gerenTI - Cadastrar equipamento</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../_css/style_cadastrarusuario.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
@@ -39,30 +39,26 @@ if ($_SESSION['adm'] == 1) {
         <section class="container">
             <div class="">
                 <h1 class="display-4 text-center">
-                    Cadastrar novo usuário
+                    Cadastrar equipamento
                     <hr>
                 </h1>
             </div>
         </section>
         <section class="container bg-white p-5">
-            <form action="../cadastrarusuario.php" method="POST">
+            <form action="../cadastrarequipamento.php" method="POST">
                 <fieldset>
                     <div class="row align-items-center justify-content-center">
                         <div class="my-2 text-center col-12">
-                            <label for="cadastrousuario">Usuário:</label> <span class="text-danger">*</span>
-                            <input name="cadastrousuario" id="cadastrousuario" class="form-control inputsenha" type="text" required>
+                            <label for="cadastropatrimonio">Patrimônio:</label> <span class="text-danger">*</span>
+                            <input name="cadastropatrimonio" id="cadastropatrimonio" class="form-control inputsenha" type="text" required>
                         </div>
                         <div class="my-2 text-center col-12">
-                            <label for="cadastroemail">Email:</label> <span class="text-danger">*</span>
-                            <input name="cadastroemail" id="cadastroemail" class="form-control inputsenha" type="email" required>
+                            <label for="cadastrodataregistro">Data de registro:</label> <span class="text-danger">*</span> <i>(Não editável)</i>
+                            <input name="cadastrodataregistro" id="cadastrodataregistro" class="form-control inputsenha" type="date" value="<?php echo date('Y-m-d'); ?>" required readonly>
                         </div>
                         <div class="my-2 text-center col-12">
-                            <label for="cadastrosenha">Senha:</label> <span class="text-danger">*</span>
-                            <input name="cadastrosenha" id="cadastrosenha" class="form-control inputsenha" type="password" required>
-                        </div>
-                        <div class="my-2 text-center col-12">
-                            <label for="cadastrorepitasenha">Repita a senha:</label> <span class="text-danger">*</span>
-                            <input name="cadastrorepitasenha" id="cadastrorepitasenha" class="form-control inputsenha" type="password" required>
+                            <label for="cadastrodescricao">Descrição:</label> <span class="text-danger">*</span>
+                            <textarea required class="d-block form-control inputsenha" name="cadastrodescricao" id="cadastrodescricao" cols="30" rows="10"></textarea>
                         </div>
                         <div class="my-2 text-center col-12">
                             <label for="cadastrosetor">Setor:</label> <span class="text-danger">*</span>

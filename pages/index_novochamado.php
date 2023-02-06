@@ -45,7 +45,7 @@ include('../conexaochamado.php');
                     <div class="row">
                         <div class="my-2 col-12 col-md-6">
                             <label for="usuario">Usuário:</label> <span class="text-danger">*</span> <i>(Não editável)</i>
-                            <input name="usuario" id="usuario" class="form-control" type="text" required readonly value="<?php echo $_SESSION['email']; ?>">
+                            <input name="usuario" id="usuario" class="form-control" type="text" required readonly value="<?php echo $_SESSION['user']; ?>">
                         </div>
 
                         <div class="my-2 col-12 col-md-6">

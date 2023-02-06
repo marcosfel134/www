@@ -20,21 +20,6 @@
     ?>
 
     <section class="container bg-white p-5">
-
-        <?php
-            /*if ($row->situacao == 'Aberto'){
-                print '<div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar" style="width: 33%">Aberto</div>
-            </div>';
-            }else if ($row->situacao == 'Em andamento'){ 
-                print '<div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar" style="width: 33%">Em andamento</div>
-            </div>';
-            }else if ($row->situacao == 'Concluído'){
-                print '<div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-            <div class="progress-bar" style="width: 100%">Concluído</div>
-            </div>';}*/
-        ?>
         
         <form action="../salvarchamado.php" method="post">
             <input type="hidden" name="acao" value="editar">

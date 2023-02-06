@@ -26,67 +26,6 @@ body {
 /* header */
 /* header */
 
-header {
-    background-color: var(--cor-branco);
-}
-
-header h1 {
-    font-family: 'roboto';
-}
-
-header button, header li {
-    background-color: var(--cor-primaria);
-    color: var(--cor-branco);
-    border-radius: 10px;
-    border: none;
-    transition: 0.3s;
-    width: 150px;
-}
-
-.dropdown-menu {
-    width: 100px;
-}
-
-.dropdown-menu li{
-    background-color: var(--cor-branco);
-    width: 85%;
-    font-size: 16px;
-}
-
-.dropdown-menu a {
-    width: 100%;
-    padding: 10px;
-}
-
-header button:hover {
-    transform: scale(1.1);
-    transition: 0.3s;
-}
-
-header li {
-    margin-right: 10px;
-    margin-left: 10px;
-}
-
-.nav-botao-desabilitado {
-    background-color: gray;
-}
-
-header i {
-    color: var(--cor-preto);
-    font-size: 25px;
-}
-
-.nav-link {
-    color: var(--cor-branco);
-    font-family: 'roboto';
-}
-
-.nav-link:hover {
-    color: var(--cor-branco);
-}
-
-
 
 /* main */
 /* main */
@@ -110,6 +49,19 @@ header i {
     background-color: var(--cor-branco);
     border: 1px solid var(--cor-preto);
     transition: 0.3s;
+}
+
+.btn-redefinir {
+    color: var(--cor-preto);
+    text-decoration: underline;
+    font-family: 'roboto';
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 8px;
+    height: 45px;
+    transition: 0.3s;
+    width: 50%;
+    margin: 0 auto;
 }
 
 .inputsenha {

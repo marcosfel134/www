@@ -1,11 +1,7 @@
 <?php
 include('../protect.php');
 include("../conexaochamado.php");
-switch (@$_REQUEST["page"]) {
-    case "novo":
-        header("location: index_novochamado.php");
-        break;
-}
+include("../conexao.php");
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +11,7 @@ switch (@$_REQUEST["page"]) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gerenTI - Chamados</title>
+    <title>gerenTI - Lista de usuários</title>
     <link rel="stylesheet" href="../_css/datatables_bootstrap.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../_css/style_chamados1.0.css">
@@ -36,36 +32,14 @@ switch (@$_REQUEST["page"]) {
         <section class="container">
             <div class="">
                 <h1 class="display-4 text-center">
-                    Chamados
+                    Lista de usuários
                     <hr>
                 </h1>
-                <?php
-                switch (@$_REQUEST["page"]) {
-                    case "editar":
-                        include("index_editarchamado.php");
-                        break;
-                }
-                ?>
-                <br>
             </div>
-
-            <div class="btn-novo-chamado">
-                <a href="?page=novo">
-                    <button class="">
-                        <i class="bi bi-plus"></i> Novo chamado
-                    </button>
-                </a>
-            </div>
-            <br>
         </section>
-        <section class="container tabelachamados">
+        <section class="container tabelausuarios">
             <?php
-            switch (@$_REQUEST["page"]) {
-                case "excluir":
-                    include("index_excluirchamado.php");
-                    break;
-            }
-            include("../listadechamados.php");
+                include("../listadeusuarios.php");
             ?>
         </section>
     </main>
@@ -80,7 +54,7 @@ switch (@$_REQUEST["page"]) {
     <script src="../_js/jquery.1.0dataTables.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#listadechamados').DataTable();
+            $('#listadeusuarios').DataTable();
         });
     </script>
 </body>

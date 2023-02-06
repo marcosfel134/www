@@ -39,6 +39,7 @@ if ($_SESSION['adm'] == 1){
             print "<td>".$row->datareceb."</td>";
             print "<td class='acoes'>
                 <div class='w-100 h-100 m-0'>
+                    <button onclick=\"location.href='".$row->n."'; \"class='btn btn-primary btn-acoes d-inline-block'><i class='bi bi-eye'></i></button>
                     <button onclick=\"location.href='?page=editar&n=".$row->n."'; \"class='btn btn-dark btn-acoes d-inline-block'><i class='bi bi-pencil'></i></button>
                     <button onclick=\"location.href='?page=excluir&n=".$row->n."'; \"class='btn btn-danger btn-acoes d-inline-block'><i class='bi bi-trash'></i></button>
                 </div>  

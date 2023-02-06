@@ -1,18 +1,18 @@
 <?php
 include('../conexao.php');
 
-if(isset($_POST['email']) || isset($_POST['senha'])) {
+if(isset($_POST['user']) || isset($_POST['senha'])) {
 
-    if(strlen($_POST['email']) == 0) {
+    if(strlen($_POST['user']) == 0) {
         echo "";
     } else if(strlen($_POST['senha']) == 0) {
         echo "";
     } else {
 
-        $email = $mysqli->real_escape_string($_POST['email']);
+        $user = $mysqli->real_escape_string($_POST['user']);
         $senha = $mysqli->real_escape_string($_POST['senha']);
 
-        $sql_code = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
+        $sql_code = "SELECT * FROM usuarios WHERE user = '$user' AND senha = '$senha'";
         $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
 
         $quantidade = $sql_query->num_rows;
@@ -26,6 +26,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
             }
 
             $_SESSION['id'] = $usuario['id'];
+            $_SESSION['user'] = $usuario['user'];
             $_SESSION['email'] = $usuario['email'];
             $_SESSION['adm'] = $usuario['adm'];
             $_SESSION['setor'] = $usuario['setor'];
@@ -67,7 +68,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
                                 <div class="row">
                                     <div class="col-12 my-3">
                                         <label for="usuario">Usuário:</label>
-                                        <input class="form-control" type="text" name="email" id="email" placeholder="Digite seu usuário" required>
+                                        <input class="form-control" type="text" name="user" id="user" placeholder="Digite seu usuário" required>
                                     </div>
     
                                     <div class="col-12 my-3">

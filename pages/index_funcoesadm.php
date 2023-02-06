@@ -19,7 +19,7 @@ if ($_SESSION['adm'] == 1) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gerenTI - Ajuda</title>
+    <title>gerenTI - Funções administrativas</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../_css/style_funcoesadm1_0_0.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
@@ -38,7 +38,7 @@ if ($_SESSION['adm'] == 1) {
         <section class="container">
             <div class="">
                 <h1 class="display-4 text-center">
-                    Funções administrativas
+                    Cadastrar
                     <hr>
                 </h1>
         </section>
@@ -46,6 +46,9 @@ if ($_SESSION['adm'] == 1) {
             <div class="row">
                 <div class="my-2 col-12">
                     <a href="index_cadastrarusuario.php"><button class="btn-cadastrar w-100">Cadastrar novo usuário</button></a>
+                </div>
+                <div class="my-2 col-12">
+                    <a href="index_cadastrarequipamento.php"><button class="btn-cadastrar w-100">Cadastrar equipamento</button></a>
                 </div>
                 <!-- <div class="my-2 col-12">
                     <a href="#"><button class="btn-cadastrar w-100">Cadastrar equipamento</button></a>

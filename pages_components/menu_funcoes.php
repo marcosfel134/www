@@ -51,9 +51,9 @@ padding: 0px;
                     print "<div class='col-4 col-md-2 col-lg-1 btn-funcoes p-0'>
                             <a href='index_funcoesadm.php'>
                                 <button>
-                                    <i class='bi bi-person-gear'></i>
+                                    <i class='bi bi-pencil'></i>
                                     <div>
-                                        Fun. ADM
+                                        Cadastrar
                                     </div>
                                 </button>
                             </a>
@@ -63,11 +63,25 @@ padding: 0px;
                 <?php
                 if ($_SESSION['adm'] == 1) {
                     print "<div class='col-4 col-md-2 col-lg-1 btn-funcoes p-0'>
-                            <a href='#'>
+                            <a href='index_listadeusuarios.php'>
                                 <button>
                                     <i class='bi bi-people'></i>
-                                    <div style='color: red;'>
-                                        X
+                                    <div>
+                                        List. Usuá.
+                                    </div>
+                                </button>
+                            </a>
+                        </div>";
+                }
+                ?>
+                 <?php
+                if ($_SESSION['adm'] == 1) {
+                    print "<div class='col-4 col-md-2 col-lg-1 btn-funcoes p-0'>
+                            <a href='index_listadeequipamentos.php'>
+                                <button>
+                                    <i class='bi bi-motherboard'></i>
+                                    <div>
+                                        List. Equip.
                                     </div>
                                 </button>
                             </a>

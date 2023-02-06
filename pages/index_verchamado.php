@@ -12,7 +12,7 @@ include('../conexaoequipamentos.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gerenTI - Ajuda</title>
+    <title>gerenTI - Detalhes de chamado</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../_css/style_ajuda1_0.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
@@ -31,7 +31,7 @@ include('../conexaoequipamentos.php');
         <section class="container">
             <div class="">
                 <h1 class="display-4 text-center">
-                    Detalhes do chamado
+                    Detalhes de chamado
                     <hr>
                 </h1>
         </section>
@@ -99,7 +99,7 @@ include('../conexaoequipamentos.php');
                             if (mysqli_num_rows($result) > 0) {
                                 print "Equipamento cadastrado <br>";
                                 if (mysqli_num_rows($result3) > 0) {
-                                    print "<a href='#'>Ver equipamento e histórico de chamados</a>";
+                                    print "<a style=\"color: blue;\" onclick=\"location.href='index_verequipamento.php?&patrimonio=".$row->patrimonio."';\">Clique para ver equipamento e histórico de chamados</a>";
                                 }
                             }else{
                                 print "Equipamento não cadastrado <br>";
@@ -112,7 +112,7 @@ include('../conexaoequipamentos.php');
                     </div>
                 </div>
 
-                <div class="row col-12 col-md-6 mt-2 mt-md-0">
+                <div class="row col-12 col-md-6">
 
                     <div class="my-2 col-12">
                         <label for="usuario">Usuário:</label>

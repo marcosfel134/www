@@ -66,12 +66,13 @@ switch (@$_REQUEST["page"]) {
                     break;
             }
             include("../listadechamados.php");
+
             ?>
         </section>
     </main>
 
     <?php
-        include("../pages_components/footer.php");
+    include("../pages_components/footer.php");
     ?>
 
     <script src="../js/bootstrap.bundle.min.js"></script>

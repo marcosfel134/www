@@ -2,6 +2,14 @@
 include('../protect.php');
 include("../conexaochamado.php");
 include("../conexao.php");
+
+if ($_SESSION['adm'] == 1) {
+} else {
+    echo "<script>
+    alert('ERRO! Sem permissão para acessar.');
+    window.location='index_home.php';
+    </script>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -36,16 +44,26 @@ include("../conexao.php");
                     <hr>
                 </h1>
             </div>
-        </section>
-        <section class="container tabelausuarios">
             <?php
-                include("../listadeusuarios.php");
+            switch (@$_REQUEST["page"]) {
+                case "editar":
+                    include("index_editarusuario.php");
+                    break;
+                case "excluir":
+                    include("index_excluirusuario.php");
+                    break;
+            }
+            ?>
+        </section>
+        <section class="container tabelachamados">
+            <?php
+            include("../listadeusuarios.php");
             ?>
         </section>
     </main>
 
     <?php
-        include("../pages_components/footer.php");
+    include("../pages_components/footer.php");
     ?>
 
     <script src="../js/bootstrap.bundle.min.js"></script>

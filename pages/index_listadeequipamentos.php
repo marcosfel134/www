@@ -2,6 +2,14 @@
 include('../protect.php');
 include("../conexao.php");
 include("../conexaoequipamentos.php");
+
+if ($_SESSION['adm'] == 1) {
+} else {
+    echo "<script>
+    alert('ERRO! Sem permissão para acessar.');
+    window.location='index_home.php';
+    </script>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +55,7 @@ include("../conexaoequipamentos.php");
                 ?>
             </div>
         </section>
-        <section class="container tabelausuarios">
+        <section class="container tabelachamados">
             <?php
                 include("../listadeequipamentos.php");
             ?>

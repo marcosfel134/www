@@ -7,22 +7,22 @@
             <section class="container">
                 <div class="">
                     <h1 class="display-4 text-center">
-                            Excluir equipamento?
+                            Excluir usuário?
                         <hr>
                     </h1>
                 </div>
             </section>
 
             <?php
-            $sql = "SELECT * FROM equipamentos WHERE patrimonio =".$_REQUEST["patrimonio"];
-            $res = $connequip->query($sql);
+            $sql = "SELECT * FROM usuarios WHERE id =".$_REQUEST["id"];
+            $res = $mysqli->query($sql);
             $row = $res->fetch_object();
             ?>
 
             <section class="container bg-white px-5">
-                <form action="../salvarequipamento.php" method="post">
+                <form action="../salvarusuario.php" method="post">
                     <input type="hidden" name="acao" value="excluir">
-                    <input type="hidden" name="patrimonio" value="<?php print $row->patrimonio?>">
+                    <input type="hidden" name="id" value="<?php print $row->id?>">
                     <fieldset>
                     <div class="my-2 col-12">
                                 <button type="submit" class="my-2 btn-finalizar w-100">Sim</button>

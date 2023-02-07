@@ -36,9 +36,29 @@
                         <input value="<?php print $row->dataregistro ?>" name="dataregistro" id="dataregistro" class="form-control" type="date">
                     </div>
 
-                    <div class="my-2 col-12 col-md-6">
+                    <div class="my-2 col-md-6 col-12">
                         <label for="setor">Setor:</label> <span class="text-danger">*</span>
-                        <input value="<?php print $row->setor ?>" name="setor" id="setor" class="form-control" type="text">
+                        <select required class="d-block form-select inputsenha" name="setor" id="setor" value="<?php print $row->setor ?>">
+                            <option selected><?php print $row->setor ?> (Atual)</option>
+                            <option value="Gabinete do Prefeito">Gabinete do Prefeito</option>
+                            <option value="Controladoria Geral">Controladoria Geral</option>
+                            <option value="Procuradoria-Geral">Procuradoria-Geral</option>
+                            <option value="Secretaria Municipal de Planejamento e Governo">Secretaria Municipal de Planejamento e Governo</option>
+                            <option value="Secretaria Municipal de Defesa do Cidadão">Secretaria Municipal de Defesa do Cidadão</option>
+                            <option value="Secretaria Municipal de Administração">Secretaria Municipal de Administração</option>
+                            <option value="Secretaria Municipal de Fazenda">Secretaria Municipal de Fazenda</option>
+                            <option value="Secretaria Municipal de Saúde">Secretaria Municipal de Saúde</option>
+                            <option value="Secretaria Municipal de Educação">Secretaria Municipal de Educação</option>
+                            <option value="Secretaria Municipal de Esporte e Lazer">Secretaria Municipal de Esporte e Lazer</option>
+                            <option value="Secretaria Municipal de Cultura">Secretaria Municipal de Cultura</option>
+                            <option value="Secretaria Municipal de Turismo">Secretaria Municipal de Turismo</option>
+                            <option value="Secretaria Municipal de Indústria e Comércio">Secretaria Municipal de Indústria e Comércio</option>
+                            <option value="Secretaria Municipal de Segurança Pública e Trânsito">Secretaria Municipal de Segurança Pública e Trânsito</option>
+                            <option value="Secretaria Municipal de Obras e Urbanismo">Secretaria Municipal de Obras e Urbanismo</option>
+                            <option value="Secretaria Municipal de Meio Ambiente e Serviços Públicos">Secretaria Municipal de Meio Ambiente e Serviços Públicos</option>
+                            <option value="Secretaria Municipal de Assistência Social e da Mulher">Secretaria Municipal de Assistência Social e da Mulher</option>
+                            <option value="Outro">Outro</option>
+                        </select>
                     </div>
 
                     <div class="my-2 col-12">

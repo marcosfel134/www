@@ -11,7 +11,7 @@ include("../conexaoequipamentos.php");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gerenTI - Lista de usuários</title>
+    <title>gerenTI - Lista de equipamentos</title>
     <link rel="stylesheet" href="../_css/datatables_bootstrap.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../_css/style_chamados1.0.css">
@@ -35,6 +35,16 @@ include("../conexaoequipamentos.php");
                     Lista de equipamentos
                     <hr>
                 </h1>
+                <?php
+                switch (@$_REQUEST["page"]) {
+                    case "editar":
+                        include("index_editarequipamento.php");
+                        break;
+                    case "excluir":
+                        include("index_excluirequipamento.php");
+                        break;
+                }
+                ?>
             </div>
         </section>
         <section class="container tabelausuarios">

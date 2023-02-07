@@ -165,13 +165,13 @@
                             </button>
                         </div>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <button class="nav-botao">
                             <a class="nav-link" href="index_ajuda.php">
                                 Ajuda
                             </a>
                         </button>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <button class="nav-botao-sair">
                             <a class="nav-link" href="../logout.php">

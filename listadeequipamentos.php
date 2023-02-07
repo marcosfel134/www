@@ -27,9 +27,9 @@ if ($_SESSION['adm'] == 1){
             print "<td>".$row->setor."</td>";
             print "<td class='acoes'>
                 <div class='w-100 h-100 m-0'>
-                <button onclick=\"location.href=''; \"class='btn btn-primary btn-acoes d-inline-block'><i class='bi bi-eye'></i></button>
-                    <button onclick=\"location.href=''; \"class='btn btn-dark btn-acoes d-inline-block'><i class='bi bi-pencil'></i></button>
-                    <button onclick=\"location.href=''; \"class='btn btn-danger btn-acoes d-inline-block'><i class='bi bi-trash'></i></button>
+                <button onclick=\"location.href='index_verequipamento.php?&patrimonio=".$row->patrimonio."'; \"class='btn btn-primary btn-acoes d-inline-block'><i class='bi bi-eye'></i></button>
+                    <button onclick=\"location.href='?page=editar&patrimonio=".$row->patrimonio."'; \"class='btn btn-dark btn-acoes d-inline-block'><i class='bi bi-pencil'></i></button>
+                    <button onclick=\"location.href='?page=excluir&patrimonio=".$row->patrimonio."'; \"class='btn btn-danger btn-acoes d-inline-block'><i class='bi bi-trash'></i></button>
                 </div>  
             </td>";
             print "</tr>";

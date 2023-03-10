@@ -88,6 +88,20 @@ padding: 0px;
                         </div>";
                 }
                 ?>
+                <?php
+                if ($_SESSION['adm'] == 1) {
+                    print "<div class='col-4 col-md-2 col-lg-1 btn-funcoes p-0'>
+                            <a href='index_alertas.php'>
+                                <button>
+                                    <i class='bi-exclamation-triangle'></i>
+                                    <div>
+                                        Alertas
+                                    </div>
+                                </button>
+                            </a>
+                        </div>";
+                }
+                ?>
             </div>
             <hr>
         </section>

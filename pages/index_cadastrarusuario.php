@@ -88,6 +88,15 @@ if ($_SESSION['adm'] == 1) {
                                 <option value="Outro">Outro</option>
                             </select>
                         </div>
+                        <div class="my-2 col-6">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="cadastroadm" name="cadastroadm">
+                                <label class="form-check-label" for="cadastroadm">ADM?</label>
+                                <div>
+                                    <span class="text-danger">Forneça funções de administrador apenas para usuários confiáveis!</span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="my-2 col-12">
                             <input type="submit" value="Finalizar" class="form-control btn-finalizar">
                         </div>

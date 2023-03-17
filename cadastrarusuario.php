@@ -6,6 +6,7 @@ include ("conexao.php");
     $cadastrorepitasenha = $_POST["cadastrorepitasenha"];
     $cadastrosetor = $_POST["cadastrosetor"];
     $cadastroemail = $_POST["cadastroemail"];
+    $cadastroadm = $_POST["cadastroadm"];
 
     $verificacao = "SELECT * FROM usuarios WHERE email = '$cadastroemail'";
     $verificacao2 = "SELECT * FROM usuarios WHERE user = '$cadastrousuario'";
@@ -27,21 +28,41 @@ include ("conexao.php");
         window.location='pages/index_cadastrarusuario.php';
         </script>";
     }else{
-        if ($cadastrosenha == $cadastrorepitasenha){
-            $sql = "INSERT INTO usuarios (user, email, senha, setor) 
-            VALUES ('{$cadastrousuario}', '{$cadastroemail}', '{$cadastrosenha}', '{$cadastrosetor}')";
-    
-            $res = $mysqli->query($sql);
-    
-            echo "<script>
-                alert('Usuário cadastrado com sucesso.');
-                window.location='pages/index_cadastrarusuario.php';
-                </script>";
+        if ($cadastroadm == true){
+            if ($cadastrosenha == $cadastrorepitasenha){
+                $sql = "INSERT INTO usuarios (user, email, senha, setor, adm) 
+                VALUES ('{$cadastrousuario}', '{$cadastroemail}', '{$cadastrosenha}', '{$cadastrosetor}', 1)";
+        
+                $res = $mysqli->query($sql);
+        
+                echo "<script>
+                    alert('Usuário cadastrado com sucesso.');
+                    window.location='pages/index_cadastrarusuario.php';
+                    </script>";
+            }else{
+                echo "<script>
+                    alert('ERRO! As senhas inseridas não são iguais.');
+                    window.location='pages/index_cadastrarusuario.php';
+                    </script>";
+            }
         }else{
-            echo "<script>
-                alert('ERRO! As senhas inseridas não são iguais.');
-                window.location='pages/index_cadastrarusuario.php';
-                </script>";
+            if ($cadastrosenha == $cadastrorepitasenha){
+                $sql = "INSERT INTO usuarios (user, email, senha, setor) 
+                VALUES ('{$cadastrousuario}', '{$cadastroemail}', '{$cadastrosenha}', '{$cadastrosetor}')";
+        
+                $res = $mysqli->query($sql);
+        
+                echo "<script>
+                    alert('Usuário cadastrado com sucesso.');
+                    window.location='pages/index_cadastrarusuario.php';
+                    </script>";
+            }else{
+                echo "<script>
+                    alert('ERRO! As senhas inseridas não são iguais.');
+                    window.location='pages/index_cadastrarusuario.php';
+                    </script>";
+            }
         }
+
+        
     }
-?>

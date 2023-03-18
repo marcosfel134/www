@@ -1,3 +1,7 @@
+<style>
+    
+</style>
+
 <footer class="p-5 text-center" style="font-size: 10px;">
     <div>
         Todos os direitos reservados &copy;

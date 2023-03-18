@@ -21,6 +21,14 @@ padding: 0px;
     width: 70px;
     height: 70px;
     margin: 3px;
+    transition: 0.3s;
+}
+
+.btn-funcoes button:focus {
+    transform: scale(1.1);
+    transition: 0.2s;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
 }
 </style>
 
@@ -81,7 +89,7 @@ padding: 0px;
                                 <button>
                                     <i class='bi bi-motherboard'></i>
                                     <div>
-                                        List. Equip.
+                                        List. Equi.
                                     </div>
                                 </button>
                             </a>

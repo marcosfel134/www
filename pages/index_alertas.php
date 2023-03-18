@@ -1,5 +1,6 @@
 <?php
 include('../protect.php');
+include("../conexaoalertas.php");
 
 if ($_SESSION['adm'] == 1) {
 } else {
@@ -52,9 +53,29 @@ if ($_SESSION['adm'] == 1) {
                             <label for="alerta">Alerta:</label> <span class="text-danger">*</span>
                             <textarea required class="form-control" name="alerta" id="alerta" cols="30" rows="10"></textarea>
                         </div>
-                        <div class="my-2 col-12">
+
+                        <div class="my-2 col-6">
+                            <label for="tipoalerta">Tipo de alerta</label> <span class="text-danger">*</span>
+                            <select required class="d-block form-select" name="tipoalerta" id="tipoalerta">
+
+                                <option selected></option>
+
+                                <option value="Vermelho">Vermelho (Grave)</option>
+
+                                <option value="Amarelo">Amarelo (Requer atenção)</option>
+
+                                <option value="Azul">Azul (Sem gravidade, informação)</option>
+
+                            </select>
+                        </div>
+
+                        <div class="my-2 col-6">
                             <label for="datareceb">Data de recebimento:</label> <span class="text-danger">*</span> <i>(Não editável)</i>
                             <input class="form-control" type="date" name="datareceb" id="datareceb" readonly value="<?php echo date('Y-m-d'); ?>">
+                        </div>
+
+                        <div class="my-2 col-12">
+                            <button type="submit" class="btn-finalizar w-100">Finalizar</button>
                         </div>
                     </div>
                 </fieldset>

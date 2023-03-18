@@ -46,15 +46,10 @@
                         <input value="******" name="senha" id="senha" class="form-control" type="password" readonly>
                     </div>
 
-                    <!-- <div class="my-2 col-12 col-md-6">
-                        <label for="setor">Setor:</label> <span class="text-danger">*</span>
-                        <input value="<?php print $row->setor ?>" name="setor" id="setor" class="form-control" type="text" required>
-                    </div> -->
-
                     <div class="my-2 col-md-6 col-12">
                         <label for="setor">Setor:</label> <span class="text-danger">*</span>
                         <select required class="d-block form-select inputsenha" name="setor" id="setor" value="<?php print $row->setor ?>">
-                            <option selected><?php print $row->setor ?> (Atual)</option>
+                            <option selected><?php print $row->setor ?></option>
                             <option value="Gabinete do Prefeito">Gabinete do Prefeito</option>
                             <option value="Controladoria Geral">Controladoria Geral</option>
                             <option value="Procuradoria-Geral">Procuradoria-Geral</option>
@@ -76,10 +71,32 @@
                         </select>
                     </div>
 
-                    <div class="my-2 col-12 col-md-6">
-                        <label for="adm">ADM:</label> <span class="text-danger">*</span> <i>(Não editável)</i>
-                        <input value="<?php print $row->adm ?>" name="adm" id="adm" class="form-control" type="text" required readonly>
+                    <?php
+                    if ($row->adm == 1) {
+                        echo '
+                        <div class="my-2 col-6">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="adm" name="adm" checked>
+                                <label class="form-check-label" for="adm">ADM?</label>
+                                <div>
+                                    <span class="text-danger">Forneça funções de administrador apenas para usuários confiáveis!</span>
+                                </div>
+                            </div>
+                        </div>
+                        ';
+                    } else {
+                        echo '<div class="my-2 col-6">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="adm" name="adm">
+                            <label class="form-check-label" for="adm">ADM?</label>
+                            <div>
+                                <span class="text-danger">Forneça funções de administrador apenas para usuários confiáveis!</span>
+                            </div>
+                        </div>
                     </div>
+                    ';
+                    }
+                    ?>
 
                     <div class="my-2 col-12">
                         <button type="submit" class="btn-finalizar w-100">Finalizar</button>

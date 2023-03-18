@@ -116,13 +116,17 @@ while ($row = mysqli_fetch_assoc($result2)) {
         <section class="container">
             <div class="row align-items-center">
                 <div class="col-6">
-                    <h1 class="display-6 fw-semibold text-center">
-                        Seja bem-vindo.
+                    <h1 class="display-5 fw-semibold text-start">
+                        Olá, <?php print $_SESSION['user']?>. Tudo bem? 
                     </h1>
+                    <h2 class="display-6 fw-light text-start">
+                        É bom te ver por aqui.
+                    </h2>
+
                 </div>
                 <div class="col-6">
                     <figure class="" width="100%" height="100px">
-                        <img width="100%" height="368px" class="" src="../_img/boasvindas.svg" alt="boasvindas">
+                        <img width="100%" height="368px" class="" src="../_img/boasvindas2.svg" alt="boasvindas">
                     </figure>
                 </div>
             </div>

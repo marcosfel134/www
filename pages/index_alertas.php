@@ -22,8 +22,10 @@ if ($_SESSION['adm'] == 1) {
     <title>gerenTI - Alertas</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../_css/style_cadastrarusuario.css">
+    <link rel="stylesheet" href="../_css/datatables_bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="../_img/favicon.png">
+    <link rel="stylesheet" href="../_css/style_chamados1.0.css">
 </head>
 
 <body>
@@ -39,13 +41,17 @@ if ($_SESSION['adm'] == 1) {
         <section class="container">
             <div class="">
                 <h1 class="display-4 text-center">
-                    Alertas
+                    Lista de Alertas
                     <hr>
                 </h1>
             </div>
         </section>
 
-        <section class="container bg-white p-5">
+        <section class="container">
+            <?php include("../listadealertas.php") ?>
+        </section>
+
+        <!-- <section class="container bg-white p-5">
             <form action="../cadastraralertas.php" method="POST">
                 <fieldset>
                     <div class="row justify-content-center align-items-center">
@@ -80,13 +86,21 @@ if ($_SESSION['adm'] == 1) {
                     </div>
                 </fieldset>
             </form>
-        </section>
+        </section> -->
     </main>
     <?php
     include("../pages_components/footer.php");
     ?>
 
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../_js/jquery-3.5.1.js"></script>
+    <script src="../_js/dataTables.bootstrap5.min.js"></script>
+    <script src="../_js/jquery.1.0dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#listadealertas').DataTable();
+        });
+    </script>
 </body>
 
 </html>

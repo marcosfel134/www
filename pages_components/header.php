@@ -133,7 +133,6 @@
             </h1>
         </a>
         <span class="d-none d-lg-block" style="font-size: 15px;">Logado como: <?php echo $_SESSION['user']; ?></span>
-
         <nav class="">
             <div class="">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#togglemenu" aria-controls="togglemenu" aria-expanded="false" aria-label="Toggle navigation">

@@ -53,6 +53,7 @@ if(isset($_POST['user']) || isset($_POST['senha'])) {
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../_css/style_login.css">
     <link rel="shortcut icon" href="../_img/favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 </head>
     <body>
 
@@ -60,9 +61,9 @@ if(isset($_POST['user']) || isset($_POST['senha'])) {
             <div class="row h-100 justify-content-center align-items-center">
                 <div class="col-12 col-md-6 col-lg-6">
                     <nav class="col-md-12">
-                        <h1 class="display-5 text-center">Login - GerenTI</h1>
-                        <h3 class="text-center fw-light">Nosso gerente de TI</h3>
-                        <br>
+                        <h1 class="text-start"><i class="bi bi-gear-fill"></i> gerenTI</h1>        
+                        <span style="font-size: 25px;" class="text-start fw-light">Nosso gerente de TI</span>   
+                        <hr>
                         <form action="" method="POST">
                             <fieldset>
                                 <div class="row">
@@ -77,7 +78,7 @@ if(isset($_POST['user']) || isset($_POST['senha'])) {
                                     </div>
     
                                     <div class="col-12 my-3">
-                                        <input class="form-control btn-submit" type="submit" value="Logar">
+                                        <input class="form-control btn-submit" type="submit" value="Entrar">
                                     </div>
                                     
                                 </div>
@@ -89,7 +90,7 @@ if(isset($_POST['user']) || isset($_POST['senha'])) {
 
                 <div class="col-12 col-md-6 col-lg-6">
                     <figure>
-                        <img src="../_img/teladelogin.svg" alt="teladelogin">
+                        <img src="../_img/teladelogin2.svg" alt="teladelogin">
                     </figure>
                 </div>
             </div>

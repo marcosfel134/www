@@ -122,7 +122,6 @@ while ($row = mysqli_fetch_assoc($result2)) {
                     <h2 class="display-6 fw-light text-start">
                         É bom te ver por aqui.
                     </h2>
-
                 </div>
                 <div class="col-6">
                     <figure class="" width="100%" height="100px">

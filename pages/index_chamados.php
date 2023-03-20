@@ -65,7 +65,12 @@ switch (@$_REQUEST["page"]) {
                     include("index_excluirchamado.php");
                     break;
             }
-            include("../listadechamados.php");
+
+            if ($_SESSION['adm'] == 1){
+                include("../listadechamadosadm.php");
+            }else{
+                include("../listadechamados.php");
+            }
 
             ?>
         </section>

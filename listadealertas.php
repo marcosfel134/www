@@ -26,8 +26,8 @@ $qtd = $res->num_rows;
                     print "<td>" . date('d/m/Y', strtotime($row->datareceb)) . "</td>";
                     print "<td class='acoes'>
                     <div class='w-100 h-100 m-0'>
-                    <button onclick=\"location.href='?page=editar&patrimonio=" . $row->id . "'; \"class='btn btn-dark btn-acoes d-inline-block'><i class='bi bi-pencil'></i></button>
-                    <button onclick=\"location.href='?page=excluir&patrimonio=" . $row->id . "'; \"class='btn btn-danger btn-acoes d-inline-block'><i class='bi bi-trash'></i></button>
+                    <button onclick=\"location.href='?page=editar&id=" . $row->id . "'; \"class='btn btn-dark btn-acoes d-inline-block'><i class='bi bi-pencil'></i></button>
+                    <button onclick=\"location.href='?page=excluir&id=" . $row->id . "'; \"class='btn btn-danger btn-acoes d-inline-block'><i class='bi bi-trash'></i></button>
                     </div>  
                     </td>";
                     print "</tr>";

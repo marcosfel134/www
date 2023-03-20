@@ -7,7 +7,7 @@
     <section class="">
         <div class="">
             <h1 class="display-4 text-center">
-                Editar chamado
+                Editar equipamento
                 <hr>
             </h1>
         </div>

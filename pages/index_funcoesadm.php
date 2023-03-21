@@ -51,7 +51,7 @@ if ($_SESSION['adm'] == 1) {
                     <a href="index_cadastrarequipamento.php"><button class="btn-cadastrar w-100">Cadastrar novo equipamento</button></a>
                 </div>
                 <div class="my-2 col-12">
-                    <a href="index_cadastraralerta"><button class="btn-cadastrar w-100">Cadastrar novo alerta</button></a>
+                    <a href="index_cadastraralerta.php"><button class="btn-cadastrar w-100">Cadastrar novo alerta</button></a>
                 </div>
             </div>
         </section>

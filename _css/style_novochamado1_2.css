@@ -69,6 +69,11 @@ body {
     border: 1px solid var(--cor-preto);
     transition: 0.3s;
 }
+
+.form-control:focus, .form-select:focus {
+    box-shadow: none;
+    border: 2px solid var(--cor-primaria);
+}
 /* footer */
 /* footer */
 /* footer */

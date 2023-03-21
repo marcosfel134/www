@@ -51,7 +51,7 @@ if(isset($_POST['user']) || isset($_POST['senha'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gerenTI - Login</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../_css/style_login.css">
+    <link rel="stylesheet" href="../_css/style_login1.0.css">
     <link rel="shortcut icon" href="../_img/favicon.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 </head>

@@ -69,6 +69,36 @@ include('../conexaoequipamentos.php');
                     ?>
                 </div>
 
+                <div class="row col-12 col-md-6">
+
+                    <div class="my-2 col-12">
+                        <label for="usuario">Usuário:</label>
+                        <input value="<?php print $row->usuario ?>" name="usuario" id="usuario" class="form-control" type="text" readonly>
+                    </div>
+
+                    <div class="my-2 col-12">
+                        <label for="responsavel">Responsável:</label>
+                        <input value="<?php print $row->responsavel ?>" name="responsavel" id="responsavel" class="form-control" type="text" readonly>
+                    </div>
+
+
+                    <div class="my-2 col-12">
+                        <label for="usuario">Tipo de chamado:</label>
+                        <input value="<?php print $row->tipodechamado ?>" name="usuario" id="usuario" class="form-control" type="text" readonly>
+                    </div>
+
+                    <div class="my-2 col-12">
+                        <label for="usuario">Setor:</label>
+                        <input value="<?php print $row->setor ?>" name="usuario" id="usuario" class="form-control" type="text" readonly>
+                    </div>
+
+                    <div class="my-2 col-12">
+                        <label for="descricao">Descrição:</label>
+                        <textarea required class="d-block form-control" name="descricao" id="descricao" cols="30" rows="10" readonly><?php print $row->descricao ?></textarea>
+                    </div>
+
+                </div>
+
                 <div class="row col-12 col-md-6 px-3">
                     <div class="col-12">
                         <hr>
@@ -99,47 +129,15 @@ include('../conexaoequipamentos.php');
                             if (mysqli_num_rows($result) > 0) {
                                 print "Equipamento cadastrado <br>";
                                 if (mysqli_num_rows($result3) > 0) {
-                                    print "<a style=\"color: blue;\" onclick=\"location.href='index_verequipamento.php?&patrimonio=".$row->patrimonio."';\">Clique para ver equipamento e histórico de chamados</a>";
+                                    print "<a style=\"color: blue;\" onclick=\"location.href='index_verequipamento.php?&patrimonio=" . $row->patrimonio . "';\">Clique para ver equipamento e histórico de chamados</a>";
                                 }
-                            }else{
+                            } else {
                                 print "Equipamento não cadastrado <br>";
                                 print "<a href='index_cadastrarequipamento.php'>Clique para cadastrar</a>";
                             }
-
-                            
                         }
                         ?>
                     </div>
-                </div>
-
-                <div class="row col-12 col-md-6">
-
-                    <div class="my-2 col-12">
-                        <label for="usuario">Usuário:</label>
-                        <input value="<?php print $row->usuario ?>" name="usuario" id="usuario" class="form-control" type="text" readonly>
-                    </div>
-
-                    <div class="my-2 col-12">
-                        <label for="responsavel">Responsável:</label>
-                        <input value="<?php print $row->responsavel ?>" name="responsavel" id="responsavel" class="form-control" type="text" readonly>
-                    </div>
-
-
-                    <div class="my-2 col-12">
-                        <label for="usuario">Tipo de chamado:</label>
-                        <input value="<?php print $row->tipodechamado ?>" name="usuario" id="usuario" class="form-control" type="text" readonly>
-                    </div>
-
-                    <div class="my-2 col-12">
-                        <label for="usuario">Setor:</label>
-                        <input value="<?php print $row->setor ?>" name="usuario" id="usuario" class="form-control" type="text" readonly>
-                    </div>
-
-                    <div class="my-2 col-12">
-                        <label for="descricao">Descrição:</label>
-                        <textarea required class="d-block form-control" name="descricao" id="descricao" cols="30" rows="10" readonly><?php print $row->descricao ?></textarea>
-                    </div>
-
                 </div>
             </div>
 

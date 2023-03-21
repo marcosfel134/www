@@ -85,6 +85,11 @@ body {
     }
 }
 
+.form-control:focus, .form-select:focus {
+    box-shadow: none;
+    border: 2px solid var(--cor-primaria);
+}
+
 /* footer */
 /* footer */
 /* footer */

@@ -21,7 +21,7 @@ if ($_SESSION['adm'] == 1) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gerenTI - Cadastrar equipamento</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../_css/style_cadastrarusuario.css">
+    <link rel="stylesheet" href="../_css/style_cadastrarusuario1.0.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="../_img/favicon.png">
 </head>
@@ -39,7 +39,7 @@ if ($_SESSION['adm'] == 1) {
         <section class="container">
             <div class="">
                 <h1 class="display-4 text-center">
-                    Cadastrar equipamento
+                    Cadastrar alerta
                     <hr>
                 </h1>
             </div>

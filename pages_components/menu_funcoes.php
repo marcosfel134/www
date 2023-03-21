@@ -103,7 +103,7 @@ padding: 0px;
                                 <button>
                                     <i class='bi-exclamation-triangle'></i>
                                     <div>
-                                        Alertas
+                                        List. Aler.
                                     </div>
                                 </button>
                             </a>

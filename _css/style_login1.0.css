@@ -55,6 +55,11 @@ body {
     transition: 0.3s;
 }
 
+.form-control:focus {
+    box-shadow: none;
+    border: 2px solid var(--cor-primaria);
+}
+
 /* header */
 /* header */
 /* header */

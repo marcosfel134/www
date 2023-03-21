@@ -1,12 +1,12 @@
 <?php
 
-$sql3 = "SELECT * FROM chamados WHERE usuario =" . $_SESSION['user'];
+$sql = "SELECT * FROM chamados WHERE usuario = '$_SESSION[user]'";
+       
+$res = $conn->query($sql);
 
-$res3 = $conn->query($sql3);
+$qtd = $res->num_rows;
 
-$qtd3 = $res3->num_rows;
-
-    if($qtd3 > 0){
+    if($qtd > 0){
         print "<table class='table table-hover table-striped table-bordered' id='listadechamados'>";
         print "<thead>";
         print "<tr>";
@@ -24,7 +24,7 @@ $qtd3 = $res3->num_rows;
         print "</tr>";
         print "</thead>";
         print "<tbody>";
-        while($row = $res3->fetch_object()){
+        while($row = $res->fetch_object()){
             print "<tr>";
             print "<td>".$row->n."</td>";
             print "<td>".$row->usuario."</td>";
@@ -36,11 +36,14 @@ $qtd3 = $res3->num_rows;
             print "<td>".$row->solucao."</td>";
             print "<td>".$row->patrimonio."</td>";
             print "<td>".date('d/m/Y', strtotime($row->datareceb))."</td>";
-            print "<td class='acoes2'>
-            <button onclick=\"location.href='index_verchamado.php?&n=".$row->n."'; \"class='btn btn-primary btn-acoes d-inline-block'><i class='bi bi-eye'></i></button>
+            print "<td class='acoes'>
+                <div class='w-100 h-100 m-0'>
+                    <button onclick=\"location.href='index_verchamado.php?&n=".$row->n."';\"class='btn btn-primary btn-acoes d-inline-block'><i class='bi bi-eye'></i></button>
+                </div>  
             </td>";
             print "</tr>";
         }
         print "</tbody>";
         print "</table>";
     }
+?>

@@ -1,5 +1,5 @@
 <?php
-$sql = "SELECT * FROM chamados";
+$sql = "SELECT * FROM `chamados` ORDER BY `chamados`.`n` DESC";
 
 $res = $conn->query($sql);
 

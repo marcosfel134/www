@@ -1,6 +1,7 @@
 <?php
 include('../protect.php');
 include("../conexaochamado.php");
+include("../conexao.php");
 switch (@$_REQUEST["page"]) {
     case "novo":
         header("location: index_novochamado.php");

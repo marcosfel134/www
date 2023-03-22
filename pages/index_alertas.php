@@ -41,7 +41,7 @@ if ($_SESSION['adm'] == 1) {
         <section class="container">
             <div class="">
                 <h1 class="display-4 text-center">
-                    Lista de Alertas
+                    Lista de alertas
                     <hr>
                 </h1>
             </div>
@@ -60,7 +60,7 @@ if ($_SESSION['adm'] == 1) {
             ?>
         </section>
 
-        <section class="container">
+        <section class="container tabelachamados">
             <?php include("../listadealertas.php") ?>
         </section>
     </main>

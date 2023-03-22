@@ -22,13 +22,21 @@ if ($_SESSION['adm'] == 1){
         print "</thead>";
         print "<tbody>";
         while($row = $res->fetch_object()){
+
             print "<tr>";
             print "<td>".$row->id."</td>";
             print "<td>".$row->user."</td>";
             print "<td>".$row->email."</td>";
             print "<td>*******</td>";
             print "<td>".$row->setor."</td>";
-            print "<td>".$row->adm."</td>";
+
+            if ($row->adm == 1){
+                $adm = "Sim";
+            }else{
+                $adm = "Não";
+            }
+
+            print "<td>".$adm."</td>";
             print "<td class='acoes'>
                 <div class='w-100 h-100 m-0'>
                     <button onclick=\"location.href='?page=editar&id=".$row->id."'; \"class='btn btn-dark btn-acoes d-inline-block'><i class='bi bi-pencil'></i></button>

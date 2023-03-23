@@ -125,7 +125,8 @@
     }
 </style>
 
-<header class="px-5">
+<header class="px-5 sticky-top">
+
     <nav class="container navbar navbar-expand-lg">
         <a class="navbar-brand" href="index_home.php">
             <h1 class="display-6 text-red d-inline-block" style="font-size: 30px;">

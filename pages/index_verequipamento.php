@@ -13,8 +13,9 @@ include('../conexaoequipamentos.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gerenTI - Detalhes de equipamento</title>
+    <link rel="stylesheet" href="../_css/datatables_bootstrap.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../_css/style_ajuda1_0.css">
+    <link rel="stylesheet" href="../_css/style_ajuda1_1.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="../_img/favicon.png">
 
@@ -125,6 +126,14 @@ include('../conexaoequipamentos.php');
     ?>
 
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../_js/jquery-3.5.1.js"></script>
+    <script src="../_js/dataTables.bootstrap5.min.js"></script>
+    <script src="../_js/jquery.1.0dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#listadechamados').DataTable();
+        });
+    </script>
 </body>
 
 </html>

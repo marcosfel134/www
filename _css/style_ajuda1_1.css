@@ -30,6 +30,10 @@ body {
 /* main */
 /* main */
 
+.tabelachamados {
+    overflow-x: scroll;
+}
+
 .btn-funcoes a {
     display: block;
     margin: 0 auto;
@@ -50,4 +54,34 @@ body {
     color: var(--cor-primaria);
     font-size: 10px;
     border: 1px solid var(--cor-preto);
+}
+
+.dataTables_paginate {
+
+}
+
+.paging_simple_numbers {
+    text-align: center;
+}
+
+.dataTables_paginate a{
+    margin: 10px;
+    font-size: 20px;
+    color: var(--cor-primaria); 
+    text-decoration: underline;
+}
+
+.dataTables_paginate a:hover {
+    color: var(--cor-secundaria);
+}
+
+.dataTables_filter input{
+    background-color: var(--cor-branco);
+    border: 2px solid var(--cor-primaria);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.dataTables_filter input:focus{
+    
 }

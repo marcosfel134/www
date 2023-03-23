@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="../_css/style_chamados1.0.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 <link rel="shortcut icon" href="../_img/favicon.png">
-<main class="px-5 pb-5">
+<main class="">
 
     <?php
     $sql = "SELECT * FROM chamados WHERE n =" . $_REQUEST["n"];
@@ -12,7 +12,7 @@
     $row = $res->fetch_object();
     ?>
 
-    <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">

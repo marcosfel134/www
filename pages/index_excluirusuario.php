@@ -1,37 +1,48 @@
 <!DOCTYPE html>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../_css/style_excluirchamado.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"> 
-    <link rel="shortcut icon" href="../_img/favicon.png">
-        <main class="px-5 pb-5">
-            <section class="container">
-                <div class="">
-                    <h1 class="display-4 text-center">
-                            Excluir usuário?
-                        <hr>
-                    </h1>
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../_css/style_excluirchamado.css">
+<link rel="stylesheet" href="../_css/style_chamados1.0.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<link rel="shortcut icon" href="../_img/favicon.png">
+<main class="">
+    <?php
+    $sql = "SELECT * FROM usuarios WHERE id =" . $_REQUEST["id"];
+    $res = $mysqli->query($sql);
+    $row = $res->fetch_object();
+    ?>
+
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Excluir usuário?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </section>
+                <div class="modal-body">
+                    Deseja realmente excluir permanentemente o usuário de ID nº <?php echo $_REQUEST["id"]; ?>?
+                </div>
+                <div class="modal-footer">
+                    <button onclick="location.href='index_listadeusuarios.php'" type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancelar</button>
+                    <form action="../salvarusuario.php" method="post">
+                        <input type="hidden" name="acao" value="excluir">
+                        <input type="hidden" name="id" value="<?php print $row->id ?>">
+                        <fieldset>
+                            <button type="submit" class="btn btn-danger">Sim, quero excluir</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 
-            <?php
-            $sql = "SELECT * FROM usuarios WHERE id =".$_REQUEST["id"];
-            $res = $mysqli->query($sql);
-            $row = $res->fetch_object();
-            ?>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    $(window).load(function() {
+        $('#exampleModal1').modal('show');
+    });
+</script>
+</body>
 
-            <section class="container bg-white px-5">
-                <form action="../salvarusuario.php" method="post">
-                    <input type="hidden" name="acao" value="excluir">
-                    <input type="hidden" name="id" value="<?php print $row->id?>">
-                    <fieldset>
-                    <div class="my-2 col-12">
-                                <button type="submit" class="my-2 btn-finalizar w-100">Sim</button>
-                            </div>
-                    </fieldset>
-                </form>
-            </section>
-        </main>
-
-    <script src="../js/bootstrap.bundle.min.js"></script>
-    </body>
 </html>

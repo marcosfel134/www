@@ -5,7 +5,8 @@ if(!isset($_SESSION)) {
 }
 
 if(!isset($_SESSION['id'])) {
-    header('location: index.php');
+    // header('location: index.php');
+    die(include("pages_components/protect.php"));
 }
 
 ?>

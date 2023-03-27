@@ -14,7 +14,7 @@ include('../conexaoequipamentos.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gerenTI - Detalhes de chamado</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../_css/style_ajuda1_0.css">
+    <link rel="stylesheet" href="../_css/style_ajuda1_1.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="shortcut icon" href="../_img/favicon.png">
 

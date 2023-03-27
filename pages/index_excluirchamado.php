@@ -23,7 +23,7 @@
                     Deseja realmente excluir permanentemente o chamado <?php echo $_REQUEST["n"]; ?>?
                 </div>
                 <div class="modal-footer">
-                    <button onclick="location.href='index_chamados.php'" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button onclick="location.href='index_chamados.php'" type="button" class="btn btn-dark" data-bs-dismiss="modal">Cancelar</button>
                     <form action="../salvarchamado.php" method="post">
                         <input type="hidden" name="acao" value="excluir">
                         <input type="hidden" name="n" value="<?php print $row->n ?>">

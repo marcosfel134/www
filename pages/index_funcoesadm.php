@@ -13,7 +13,7 @@ if ($_SESSION['adm'] == 1) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">

@@ -7,12 +7,12 @@
             $setor = $_POST["setor"];
             $descricao = $_POST["descricao"];
             $dataregistro = $_POST["dataregistro"];
-            $patrimonio = $_POST["patrimonio"];
+            $patrimonionovo = $_POST["patrimonionovo"];
 
             $sql = "UPDATE equipamentos SET
                 setor='{$setor}',
-                dataregistro='{$datareceb}',
-                patrimonio='{$patrimonio}',
+                dataregistro='{$dataregistro}',
+                patrimonio='{$patrimonionovo}',
                 descricao='{$descricao}'
                 WHERE 
                 patrimonio= ".$_REQUEST["patrimonio"]; 
